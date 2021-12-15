@@ -124,6 +124,7 @@ public class BSTReconstruction
                 "Search Tree!");
         Thread.sleep(2000);
         while(true) {
+            // Program
             System.out.print("Enter the total number of integers (nodes) that you want in the tree: ");
             Scanner sc = new Scanner(System.in);
             int arrayLength = sc.nextInt();
