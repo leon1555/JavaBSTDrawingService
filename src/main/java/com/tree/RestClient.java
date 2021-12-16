@@ -15,7 +15,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class RestClient {
     public static void postInput(int[] inputArray) throws JsonProcessingException {
         String input = Arrays.toString(inputArray);
-//        String input = inputWithCommasAndBrackets.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(",", "");
         Map<Object, Object> tree = new HashMap<>();
         tree.put("input", input);
 
