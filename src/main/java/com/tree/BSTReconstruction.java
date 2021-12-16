@@ -1,5 +1,7 @@
 package com.tree;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import java.util.*;
 
 public class BSTReconstruction
@@ -117,7 +119,7 @@ public class BSTReconstruction
         return false;
     }
 
-    public static void main(final String[] args) throws InterruptedException {
+    public static void main(final String[] args) throws InterruptedException, JsonProcessingException {
         System.out.println("Welcome to the Java Tree Drawing Service!");
         Thread.sleep(1000);
         System.out.println("This program will take in a series of integers from the user and draw a Binary Balanced " +
@@ -137,6 +139,7 @@ public class BSTReconstruction
                 inputArray[i]=sc.nextInt();
             }
             if(!duplicates(inputArray)){
+                RestClient.postInput(inputArray);
                 Arrays.sort(inputArray);
                 final int[][] inputs = {inputArray};
                 System.out.println("Here is your tree:");
