@@ -2,13 +2,12 @@ package com.tree;
 
 public class TreeHeight {
 
+    // helper method for TreePrinter
     static <T> int getHeight(final BinaryTreeNode<T> parent)
     {
-        // recursive termination
         if (parent == null)
             return 0;
 
-        // recursive descent
         final int leftHeight = getHeight(parent.left);
         final int rightHeight = getHeight(parent.right);
 

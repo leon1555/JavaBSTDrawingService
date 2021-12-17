@@ -5,9 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+// visual rendering of balanced binary search tree
+// adapted from M. Inden, Java Challenges (O'Reilly)
 public class TreePrinter
 {
-
     static int subtreeWidth(final int height)
     {
         if (height <= 0)
