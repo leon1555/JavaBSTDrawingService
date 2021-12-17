@@ -9,6 +9,17 @@ import java.util.Queue;
 // adapted from M. Inden, Java Challenges (O'Reilly)
 public class TreePrinter
 {
+    static <T> int getHeight(final BinaryTreeNode<T> parent)
+    {
+        if (parent == null)
+            return 0;
+
+        final int leftHeight = getHeight(parent.left);
+        final int rightHeight = getHeight(parent.right);
+
+        return 1 + Math.max(leftHeight, rightHeight);
+    }
+
     static int subtreeWidth(final int height)
     {
         if (height <= 0)
@@ -134,7 +145,7 @@ public class TreePrinter
         if (startNode == null)
             return;
 
-        final int treeHeight = TreeHeight.getHeight(startNode);
+        final int treeHeight = getHeight(startNode);
         final List<String> lines = new ArrayList<>();
 
         int level = 0;
