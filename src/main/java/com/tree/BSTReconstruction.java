@@ -119,30 +119,36 @@ public class BSTReconstruction
     public static void main(final String[] args) throws Exception {
         System.out.println("Welcome to the Java Tree Drawing Service!");
         Thread.sleep(1000);
-        System.out.println("This program will take in a series of integers from the user and draw a Binary Balanced " +
+        System.out.println("This program will take in a series of integers from the user and draw a Balanced Binary " +
                 "Search Tree!");
         Thread.sleep(1000);
         while(true) {
             // Program
-            System.out.print("Enter the total number of integers (nodes) that you want in the tree: ");
             int arrayLength = 0;
             Scanner sc = new Scanner(System.in);
-            if(!sc.hasNextInt()) {
-                throw new NullPointerException("You must enter an integer!");
-            } else {
-                arrayLength = sc.nextInt();
+            while(true) {
+                System.out.print("Enter the total number of integers (nodes) that you want in the tree: ");
+                if(!sc.hasNextInt()) {
+                    System.out.println("You must enter an integer!");
+                    sc.next();
+                } else {
+                    arrayLength = sc.nextInt();
+                    break;
+                }
             }
-
-            System.out.println("Now enter the integers (one at a time followed each time by the return key): ");
             int [] inputArray = new int[arrayLength];
+            System.out.println("Now enter the integers (one at a time followed each time by the return key): ");
             for(int i=0; i<arrayLength; i++)
             {
-                if(!sc.hasNextInt()) {
-                    throw new Exception("You must enter an integer!");
-                } else {
-                    inputArray[i]=sc.nextInt();
+                while(true) {
+                    if (!sc.hasNextInt()) {
+                        System.out.println("You must enter an integer!");
+                        sc.next();
+                    } else {
+                        inputArray[i] = sc.nextInt();
+                        break;
+                    }
                 }
-
             }
             if(!duplicates(inputArray)){
                 RestClient.postInput(inputArray);
