@@ -32,6 +32,7 @@ public class TreePrinter
         final int widthOfTree = maxNumOfLeaves * leafWidth + (maxNumOfLeaves - 1) * spacing;
         final int widthOfSubtree = (widthOfTree - spacing) / 2;
 
+        System.out.println("width of subtree: " + widthOfSubtree);
         return widthOfSubtree;
     }
 
